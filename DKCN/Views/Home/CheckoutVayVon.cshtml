@@ -1,0 +1,77 @@
+﻿@model ThongTinVayVon
+
+@{
+    Layout = "_LayoutCheckout";
+}
+<form asp-controller="Home" asp-action="PaymentVayVon" class="form-checkout" method="POST">
+    <div class="mt-4">
+        <h5>Thông Tin</h5>
+        <div class="card-checkout">
+            <strong>
+                @Model.MSSV | @Model.HOTEN - Đăng Kí Giấy Chứng Nhận Sinh Viên HCMUE
+            </strong>
+        </div>
+    </div>
+    <div>
+        <h5>Lệ Phí Đăng Kí</h5>
+
+        <div class="card-checkout">
+            <strong>
+                4.000 VNĐ
+            </strong>
+        </div>
+    </div>
+
+    <fieldset>
+        <legend>
+            <h5>Phương Thức Thanh Toán</h5>
+        </legend>
+
+        <div class="form__radios">
+            <div class="form__radio">
+                <label for="visa">
+                    <img src="~/files/momo_icon.png" width="32px" />
+                    Ví điện tử MOMO
+                </label>
+
+            </div>
+        </div>
+    </fieldset>
+    <div>
+
+        <table>
+            <tfoot>
+                <tr>
+                    <td align="right"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
+
+    <input type="hidden" asp-for="MSSV" class="form-control">
+    <input type="hidden" asp-for="HOTEN" class="form-control">
+    <input type="hidden" asp-for="GIOITINH" class="form-control">
+    <input type="hidden" asp-for="NGAYSINH" class="form-control">
+    <input type="hidden" asp-for="CMND" class="form-control">
+    <input type="hidden" asp-for="NOICAP" class="form-control">
+    <input type="hidden" asp-for="NGAYCAP" class="form-control">
+    <input type="hidden" asp-for="EMAILSV" class="form-control">
+    <input type="hidden" asp-for="Phone" class="form-control">
+    <input type="hidden" asp-for="KHOAHOC" class="form-control">
+    <input type="hidden" asp-for="NGANHHOC" class="form-control">
+    <input type="hidden" asp-for="LOP" class="form-control">
+    <input type="hidden" asp-for="KHOA" class="form-control">
+    <input type="hidden" asp-for="HEDAOTAO" class="form-control">
+    <input type="hidden" asp-for="NGAYDANGKI" class="form-control">
+    <input type="hidden" asp-for="LYDO" class="form-control">
+    <input type="hidden" asp-for="XACNHAN" class="form-control">
+    <input type="hidden" asp-for="NGAYNHAPHOC" class="form-control">
+    <input type="hidden" asp-for="THOIGIANRATRUONG" class="form-control">
+    <input type="hidden" asp-for="THUOCDIEN" class="form-control">
+    <input type="hidden" asp-for="THUOCDOITUONG" class="form-control">
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-outline-primary">Tiến Hành Thanh Toán</button>
+    </div>
+</form>

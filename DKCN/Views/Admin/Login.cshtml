@@ -1,0 +1,53 @@
+﻿@model LoginAdminViewModel
+
+@{
+    ViewBag.Title = "Admin Login";
+    Layout = "_LayoutLogin";
+}
+
+<div class="card-body">
+    <div class="d-flex m-b-30">
+        <a asp-area="" asp-controller="Home" asp-action="Index">
+            <img src="~/files/header_login.png" alt="HCMUE" class="w-100" />
+        </a>
+    </div>
+
+    <form method="post" asp-controller="Admin" asp-action="Login">
+        <div class="form-group">
+            <label class="font-weight-semibold" asp-for="Email"><i class="fa-solid fa-user"></i>&nbsp;Tên tài khoản:</label>
+            <div class="input-affix d-block">
+                <input asp-for="Email" class="form-control">
+            </div>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="font-weight-semibold" asp-for="Password"> <i class="fa-solid fa-lock"></i>&nbsp;Mật khẩu:</label>
+            <div class="input-affix m-b-10 d-block">
+                <input asp-for="Password" type="password" class="form-control">
+            </div>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-check mb-4">
+            <input asp-for="RememberMe" class="form-check-input" type="checkbox" id="rememberMe" value="true">
+            <label class="form-check-label" for="rememberMe">&nbsp;Lưu thông tin đăng nhập</label>
+        </div>
+        @if(TempData["Message"] != null){
+            <div>
+                <h6 class="text-center text-danger mt-2 mb-2">@TempData["Message"]</h6>
+            </div>
+        }
+        <div class="form-group">
+            <div class="d-flex align-items-center justify-content-between">
+                <button class="btn btn-primary w-100" type="submit">ĐĂNG NHẬP</button>
+            </div>
+        </div>
+    </form>
+</div>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
+
+
+

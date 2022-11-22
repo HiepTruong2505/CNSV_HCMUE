@@ -1,0 +1,209 @@
+﻿@model VayVonCreateViewModel
+
+@{
+    ViewBag.Tite = "Đăng Kí Thủ Tục Vay Vốn";
+}
+
+<form method="post" asp-action="Register">
+
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="border p-3 mt-2 row">
+                <div class="col-12 pb-2">
+                    <h2 class="text-danger text-center fw-bold">Đăng Kí Giấy Chứng Nhận Sinh Viên Hoàn Tất Thủ Tục Xin Vay Vốn</h2>
+                    <p><strong>Dấu <span class="text-danger">*</span> Bắt buộc điền thông tin</strong></p>
+                </div>
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.MSSV">@Html.DisplayNameFor(m => m.MSSV)<span class="text-danger">*</span></label>
+                        <input asp-for="@Model.MSSV" class="form-control" />
+                        <span asp-validation-for="@Model.MSSV" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.HOTEN">@Html.DisplayNameFor(m => m.HOTEN)<span class="text-danger">*</span></label>
+                        <input asp-for="@Model.HOTEN" class="form-control" />
+                        <span asp-validation-for="@Model.HOTEN" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.NGAYSINH">@Html.DisplayNameFor(m => m.NGAYSINH)<span class="text-danger">*</span></label>
+                        <input type="date" asp-for="@Model.NGAYSINH" class="form-control" />
+                        <span asp-validation-for="@Model.NGAYSINH" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.GIOITINH">@Html.DisplayNameFor(m => m.GIOITINH)<span class="text-danger">*</span>: </label>
+                        <select asp-for="GIOITINH" class="form-select">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.CMND">@Html.DisplayNameFor(m => m.CMND)<span class="text-danger">*</span></label>
+                        <input asp-for="@Model.CMND" class="form-control" />
+                        <span asp-validation-for="@Model.CMND" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.NGAYCAP">@Html.DisplayNameFor(m => m.NGAYCAP)<span class="text-danger">*</span></label>
+                        <input type="date" asp-for="@Model.NGAYCAP" class="form-control" />
+                        <span asp-validation-for="@Model.NGAYCAP" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.NOICAP">@Html.DisplayNameFor(m => m.NOICAP)<span class="text-danger">*</span></label>
+                        <input asp-for="@Model.NOICAP" class="form-control" />
+                        <span asp-validation-for="@Model.NOICAP" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.EMAILSV">@Html.DisplayNameFor(m => m.EMAILSV)<span class="text-danger">*</span></label>
+                        <input type="email" asp-for="@Model.EMAILSV" class="form-control" />
+                        <span asp-validation-for="@Model.EMAILSV" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.KHOAHOC">@Html.DisplayNameFor(m => m.KHOAHOC)<span class="text-danger">*</span></label>
+                        <input asp-for="@Model.KHOAHOC" class="form-control" />
+                        <span asp-validation-for="@Model.KHOAHOC" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.LOP">@Html.DisplayNameFor(m => m.LOP)<span class="text-danger">*</span></label>
+                        <input asp-for="@Model.LOP" class="form-control" />
+                        <span asp-validation-for="@Model.LOP" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.KHOA">@Html.DisplayNameFor(m => m.KHOA)<span class="text-danger">*</span></label>
+                        <select asp-for="KHOA" class="form-select">
+                            @foreach (var item in Model.KhoaList)
+                            {
+                                <option value="@item">@item</option>
+                            }
+                        </select>
+                        <span asp-validation-for="KhoaList" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.NGANHHOC">@Html.DisplayNameFor(m => m.NGANHHOC)<span class="text-danger">*</span></label>
+                        <select asp-for="NGANHHOC" class="form-select">
+                            @foreach (var item in Model.NganhList)
+                            {
+                                <option value="@item">@item</option>
+                            }
+                        </select>
+                        <span asp-validation-for="NganhList" class="text-danger"></span>
+                    </div>
+
+
+
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.NGAYNHAPHOC">@Html.DisplayNameFor(m => m.NGAYNHAPHOC)<span class="text-danger">*</span></label>
+                        <input type="date" asp-for="@Model.NGAYNHAPHOC" class="form-control" />
+                        <span asp-validation-for="@Model.NGAYNHAPHOC" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.THOIGIANRATRUONG">@Html.DisplayNameFor(m => m.THOIGIANRATRUONG)<span class="text-danger">*</span></label>
+                        <input type="date" asp-for="@Model.THOIGIANRATRUONG" class="form-control" />
+                        <span asp-validation-for="@Model.THOIGIANRATRUONG" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-6 col-12">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.Phone">@Html.DisplayNameFor(m => m.Phone)<span class="text-danger">*</span></label>
+                        <input type="text" asp-for="@Model.Phone" class="form-control" />
+                        <span asp-validation-for="@Model.Phone" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.HEDAOTAO">@Html.DisplayNameFor(m => m.HEDAOTAO)<span class="text-danger">*</span></label>
+                        <input asp-for="@Model.HEDAOTAO" class="form-control" />
+                        <span asp-validation-for="@Model.HEDAOTAO" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.LYDO">@Html.DisplayNameFor(m => m.LYDO)<span class="text-danger">*</span></label>
+                        <input asp-for="@Model.LYDO" class="form-control" />
+                        <span asp-validation-for="@Model.LYDO" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label asp-for="@Model.THUOCDIEN" class="form-label">@Html.DisplayNameFor(m => m.THUOCDIEN)<span class="text-danger">*</span>: </label>
+
+                    @foreach (var thuocdien in Model.ThuocDienList)
+                    {
+
+                        <div class="form-check">
+                            <input type="radio" asp-for="@Model.THUOCDIEN" class="form-check-inline" value="@thuocdien" /> @thuocdien
+                        </div>
+
+                    }
+                </div>
+
+                <div class="form-group my-2 form-check-inline">
+                    <label asp-for="@Model.THUOCDOITUONG" class="form-label">@Html.DisplayNameFor(m => m.THUOCDOITUONG)<span class="text-danger">*</span>: </label>
+                    @foreach (var thuocdoituong in Model.ThuocDoiTuongList)
+                    {
+                        <div class="form-check">
+                            <input type="radio" asp-for="@Model.THUOCDOITUONG" class="form-check-inline" value="@thuocdoituong" />@thuocdoituong
+                        </div>
+                    }
+                </div>
+
+
+                <div class="form-group my-2 form-check-inline">
+                    <label asp-for="@Model.XACNHAN" class="form-label mt-2">@Html.DisplayNameFor(m => m.XACNHAN)<span class="text-danger">*</span>: </label>
+                    <div class="mt-2">
+                        <div class="form-check">
+                            <input asp-for="XACNHAN" class="form-check-input" type="checkbox" value="true" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Đã đọc kĩ và cung cấp chính xác, đầy đủ thông tin theo mẫu
+                            </label>
+                        </div>
+                    </div>
+                    <span asp-validation-for="XACNHAN" class="text-danger"></span>
+                </div>
+
+                <div class="col-12 pb-5">
+                    <button type="submit" class="btn btn-outline-primary">Đăng Kí</button>
+                    <a class="btn btn-outline-danger cancel-btn" asp-controller="Home" asp-action="Index">Hủy</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }

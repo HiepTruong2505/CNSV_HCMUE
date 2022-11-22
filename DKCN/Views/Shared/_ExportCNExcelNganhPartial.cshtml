@@ -1,0 +1,105 @@
+﻿<form method="post" asp-action="CNExcelNganh" asp-controller="Admin">
+    <div class="modal fade" id="nganhModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-bg-primary">
+                    <h5 class="modal-title" id="exampleModalLabel">Export Excel Ngành</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <select name="stringExport" class="form-select">
+                        <option value="">Chọn Ngành</option>
+                        <optgroup label="Khoa Công Nghệ Thông Tin">
+                            <option value="Sư Phạm Tin">Sư Phạm Tin Học</option>
+                            <option value="Công Nghệ Thông Tin">Công Nghệ Thông Tin</option>
+                        </optgroup>
+                        <optgroup label="Khoa Toán - Tin học">
+                            <option value="Sư Phạm Toán">Sư Phạm Toán Học</option>
+                        </optgroup>
+                        <optgroup label="Khoa Vật Lý">
+                            <option value="Sư Phạm Vật Lý">Sư Phạm Vật Lý</option>
+                            <option value="Sư Phạm Công Nghệ">Sư Phạm Công Nghệ</option>
+                            <option value="Vật Lý Học">Vật Lý Học</option>
+                        </optgroup>
+                        <optgroup label="Khoa Địa Lý">
+                            <option value="Sư Phạm Địa Lý">Sư Phạm Địa Lý</option>
+                            <option value="Địa Lý Học">Địa Lý Học</option>
+                        </optgroup>
+                        <optgroup label="Khoa Giáo dục Chính trị">
+                            <option value="Giáo Dục Công Dân">Giáo Dục Công Dân</option>
+                            <option value="Giáo Dục Chính Trị">Giáo Dục Chính Trị</option>
+                        </optgroup>
+                        <optgroup label="Khoa Giáo dục Đặc biệt">
+                            <option value="Giáo Dục Đặc Biệt"> Giáo Dục Đặc Biệt</option>
+                        </optgroup>
+                        <optgroup label="Khoa Giáo Dục Mầm Non">
+                            <option value="Giáo dục Mầm Non">Giáo dục Mầm Non</option>
+                        </optgroup>
+                        <optgroup label="Khoa Giáo Dục Quốc Phòng">
+                            <option value="Giáo Dục Quốc Phòng - An ninh">Giáo Dục Quốc Phòng - An Ninh</option>
+                        </optgroup>
+                        <optgroup label="Khoa Giáo Dục Thể Chất">
+                            <option value="Giáo Dục Thể Chất">Giáo Dục Thể Chất</option>
+                        </optgroup>
+                        <optgroup label="Khoa Giáo dục Tiểu Học">
+                            <option value="Giáo Dục Tiểu Học">Giáo Dục Tiểu Học</option>
+                        </optgroup>
+                        <optgroup label="Khoa Hoá Học">
+                            <option value="Hoá Học">Hoá Học</option>
+                            <option value="Sư Phạm Hoá">Sư Phạm Hoá Học</option>
+                            <option value="Sư Phạm Khoa Học Tự Nhiên">Sư Phạm Khoa Học Tự Nhiên</option>
+                        </optgroup>
+                        <optgroup label=" Khoa Học Giáo dục">
+                            <option value="Quản Lý Giáo Dục">Quản Lý Giáo Dục</option>
+                            <option value="Giáo Dục Học">Giáo Dục Học</option>
+                        </optgroup>
+                        <optgroup label=" Khoa Lịch Sử">
+                            <option value="Sư Phạm Lịch Sử">Sư Phạm Lịch Sử</option>
+                            <option value="Quốc Tế Học">Quốc Tế Học</option>
+                        </optgroup>
+                        <optgroup label=" Khoa Ngữ Văn">
+                            <option value="Sư Phạm Ngữ Văn">Sư Phạm Ngữ Văn</option>
+                            <option value="Văn Học">Văn Học</option>
+                            <option value="Việt Nam Học">Việt Nam Học</option>
+                            <option value="Tiếng Việt Và Văn Hóa Việt Nam">Tiếng Việt Và Văn Hóa Việt Nam</option>
+                        </optgroup>
+                        <optgroup label=" Khoa Sinh Học">
+                            <option value="Sư phạm Sinh">Sư Phạm Sinh Học</option>
+                        </optgroup>
+                        <optgroup label=" Khoa Tâm Lý Học">
+                            <option value="Tâm Lý Học">Tâm Lý Học</option>
+                            <option value="Công Tác Xã Hội">Công Tác Xã Hội</option>
+                            <option value="Tâm Lý Học Giáo Dục">Tâm Lý Học Giáo Dục</option>
+                        </optgroup>
+                        <optgroup label="Khoa Tiếng Trung">
+                            <option value="Ngôn Ngữ Trung">Ngôn Ngữ Trung Quốc</option>
+                            <option value="Sư Phạm Tiếng Trung">Sư Phạm Tiếng Trung Quốc</option>
+                        </optgroup>
+                        <optgroup label="Khoa Tiếng Pháp">
+                            <option value="Ngôn Ngữ Pháp">Ngôn Ngữ Pháp</option>
+                            <option value="Sư Phạm Tiếng Pháp">Sư Phạm Tiếng Pháp</option>
+                        </optgroup>
+                        <optgroup label="Khoa Tiếng Nhật">
+                            <option value="Ngôn Ngữ Nhật">Ngôn Ngữ Nhật</option>
+                        </optgroup>
+                        <optgroup label="Khoa Tiếng Nga">
+                            <option value="Sư phạm Tiếng Nga">Sư phạm Tiếng Nga</option>
+                            <option value="Ngôn Ngữ Nga">Ngôn Ngữ Nga</option>
+                        </optgroup>
+                        <optgroup label="Khoa Tiếng Hàn Quốc">
+                            <option value="Ngôn Ngữ Hàn">Ngôn Ngữ Hàn Quốc</option>
+                        </optgroup>
+                        <optgroup label="Khoa Tiếng Anh">
+                            <option value="Ngôn Ngữ Anh">Ngôn Ngữ Anh</option>
+                            <option value="Sư Phạm Tiếng Anh">Sư Phạm Tiếng Anh</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

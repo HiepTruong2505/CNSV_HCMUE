@@ -1,0 +1,188 @@
+﻿@model ThongTinVayVon
+
+@{
+    Layout = "_LayoutAdmin";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header pb-0">
+                <div class="row">   
+                    <nav aria-label="breadcrum">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Admin" asp-action="ChungNhanIndex">Admin</a>
+                            </li>
+
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Admin" asp-action="ChungNhanIndex">
+                                     Danh Sách Chứng Nhận
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active font-weight-bolder" aria-current="page">
+                                Thông Tin Chi Tiết
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="col-12">
+                        <h5 class="text-danger text-center fw-bold"> Thông Tin Chi Tiết Đăng Kí Giấy Chứng Nhận Sinh Viên Hoàn Tất Thủ Tục Vay Vốn</h5>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="MSSV">Mã số sinh viên<span class="text-danger">*</span></label>
+                            <input disabled asp-for="MSSV" class="form-control" />
+
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="HOTEN">Họ sên<span class="text-danger">*</span></label>
+                            <input disabled asp-for="HOTEN" class="form-control" p />
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="NGAYSINH">Ngày sinh (tháng/ngày/năm)<span class="text-danger">*</span></label>
+                            <input disabled asp-for="NGAYSINH" value="@Model.NGAYSINH.ToString("yyyy-MM-dd")" class="form-control">
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label disabled class="form-label text-primary mt-2" asp-for="GIOITINH">Giới tính<span class="text-danger">*</span>: </label>
+                            <input disabled asp-for="GIOITINH" class="form-control" />
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="CMND">Số CMND/CCCD<span class="text-danger">*</span></label>
+                            <input disabled asp-for="CMND" class="form-control" />
+  
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="NGAYCAP">Ngày cấp (tháng-ngày-năm)<span class="text-danger">*</span></label>
+                            <input disabled asp-for="NGAYCAP" value="@Model.NGAYCAP.ToString("yyyy-MM-dd")" class="form-control" />
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="NOICAP">Nơi cấp<span class="text-danger">*</span></label>
+                            <input disabled asp-for="NOICAP" class="form-control" />
+  
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="EMAILSV">Email sinh viên<span class="text-danger">*</span></label>
+                            <input disabled type="email" asp-for="EMAILSV" class="form-control" />
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="KHOAHOC">Khóa học<span class="text-danger">*</span></label>
+                            <input disabled asp-for="KHOAHOC" class="form-control" />
+
+                        </div>
+
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="LOP">Lớp<span class="text-danger">*</span></label>
+                            <input disabled asp-for="LOP" class="form-control" />
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="NGANHHOC">Ngành học<span class="text-danger">*</span></label>
+                            <input disabled asp-for="NGANHHOC" class="form-control" />
+
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="HEDAOTAO">Hệ đào tạo<span class="text-danger">*</span></label>
+                            <input disabled asp-for="HEDAOTAO" class="form-control" />
+          
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="NGAYNHAPHOC">Ngày nhập học<span class="text-danger">*</span></label>
+                            <input disabled asp-for="NGAYNHAPHOC" value="@Model.NGAYNHAPHOC.ToString("yyyy-MM-dd")" class="form-control" />
+                      
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="THOIGIANRATRUONG">Thời gian ra trường<span class="text-danger">*</span></label>
+                            <input disabled asp-for="THOIGIANRATRUONG" value="@Model.THOIGIANRATRUONG.ToString("yyyy-MM-dd")" class="form-control" />
+                            
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-12">
+                            <label class="form-label text-primary mt-2" asp-for="Phone">Số điện thoại<span class="text-danger">*</span></label>
+                            <input disabled type="text" asp-for="Phone" class="form-control" />
+                      
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="KHOA">Khoa<span class="text-danger">*</span></label>
+                            <input disabled asp-for="KHOA" class="form-control" />
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="form-label text-primary mt-2" asp-for="LYDO">Lý do yêu cầu cấp giấy chứng nhận<span class="text-danger">*</span></label>
+                            <input disabled asp-for="LYDO" class="form-control" />
+                            <span asp-validation-for="LYDO" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group my-2">
+                        <label asp-for="THUOCDIEN" class="form-label">Thuộc diện<span class="text-danger">*</span>: </label>
+                        <input disabled asp-for="THUOCDIEN" class="form-control" />
+                    </div>
+
+                    <div class="form-group my-2 form-check-inline">
+                        <label asp-for="THUOCDOITUONG" class="form-label">Thuộc đối tượng<span class="text-danger">*</span>: </label>
+                        <input disabled asp-for="THUOCDOITUONG" class="form-control" />
+                    </div>
+
+
+                    <div class="form-group my-2 form-check-inline">
+                        <label asp-for="XACNHAN" class="form-label mt-2">Xác nhận thông tin đăng kí<span class="text-danger">*</span>: </label>
+                        <div class="mt-2">
+                            <div class="form-check">
+                                <input disabled asp-for="XACNHAN" class="form-check-input" type="checkbox" value="true" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Đã đọc kĩ và cung cấp chính xác, đầy đủ thông tin theo mẫu
+                                </label>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 pb-5 mt-4">
+                             <a asp-controller="Admin" asp-action="ChungNhanIndex">
+                                <button class="btn btn-outline-primary btn-sm mb-0"><i class="fa-solid fa-arrow-left"></i>Quay Lại</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

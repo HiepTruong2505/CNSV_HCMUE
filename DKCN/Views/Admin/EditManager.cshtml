@@ -1,0 +1,45 @@
+﻿@model UsersEditManagerViewModel
+@{
+    Layout = "_LayoutAdmin";
+}
+<div class="row">
+    <div class="col-8">
+        <nav aria-label="breadcrum">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a asp-controller="Admin" asp-action="ChungNhanIndex">Admin</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a asp-controller="User" asp-action="ChungNhanIndex">Danh Sách Tài Khoản</a>
+                </li>
+                <li class="breadcrumb-item active font-weight-bolder" aria-current="page">
+                    Cập Nhật
+                </li>
+            </ol>
+        </nav>
+    </div>
+    <div class="col-4 d-flex justify-content-end">
+        <button class="btn btn-design  w-100 me-2">
+            <a asp-controller="Admin" asp-action="ChungNhanIndex">Quay Lại Trang Chủ</a>
+        </button>
+    </div>
+</div>
+<div class="p-4 border rounded">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" asp-action="EditManager">
+                <input asp-for="@Model.Id" hidden />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="@Model.Email" class="text-primary"><i class="fa-solid fa-user"></i>&nbsp;Email</label>
+                    <input asp-for="@Model.Email" class="form-control" />
+                    <input asp-for="@Model.Email" hidden />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success me-4">Cập Nhật</button>
+                    <a asp-controller="Admin" asp-action="DanhSachAdminIndex" class="btn btn-warning" style="width:auto">Trở Lại</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

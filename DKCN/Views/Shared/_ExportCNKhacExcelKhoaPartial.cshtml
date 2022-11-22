@@ -1,0 +1,43 @@
+﻿<form method="post" asp-action="CNKhacExcelKhoa" asp-controller="Admin">
+    <div class="modal fade" id="khoaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-bg-primary">
+                    <h5 class="modal-title" id="exampleModalLabel">Export Excel Khoa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <select name="stringExport" class="form-select">
+                        <option selected>Chọn Khoa</option>
+                        <option value="Toán - Tin Học">Toán - Tin Học</option>
+                        <option value="Công Nghệ Thông Tin">Công Nghệ Thông Tin</option>
+                        <option value="Toán - Tin Học">Toán - Tin Học</option>
+                        <option value="Hóa Học">Hóa Học</option>
+                        <option value="Sinh học">Sinh Học</option>
+                        <option value="Ngữ Văn">Ngữ Văn</option>
+                        <option value="Lịch Sử">Lịch Sử</option>
+                        <option value="Địa Lý">Địa Lý</option>
+                        <option value="Tiếng Anh">Tiếng Anh</option>
+                        <option value="Tiếng Pháp">Tiếng Pháp</option>
+                        <option value="Tiếng Trung">Tiếng Trung</option>
+                        <option value="Tiếng Nhật">Tiếng Nhật</option>
+                        <option value="Tiếng Hàn">Tiếng Hàn</option>
+                        <option value="Giáo Dục Chính Trị">Giáo Dục Chính Trị</option>
+                        <option value="Tâm Lý Học">Tâm Lý Học</option>
+                        <option value="Khoa Học Giáo Dục">Khoa Học Giáo Dục</option>
+                        <option value="Giáo Dục Mầm Non">Giáo Dục Mầm Non</option>
+                        <option value="Giáo Dục Tiểu Học">Giáo Dục Tiểu Học</option>
+                        <option value="Giáo Dục Quốc Phòng">Giáo Dục Quốc Phòng</option>
+                        <option value="Giáo Dục Đặc Biệt">Giáo Dục Đặc Biệt</option>
+                        <option value="Giáo Dục Thể Chất">Giáo Dục Thể Chất</option>
+                        <option value="Tổ Nữ Công">Tổ Nữ Công</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

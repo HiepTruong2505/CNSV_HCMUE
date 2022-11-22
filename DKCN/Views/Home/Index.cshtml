@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Trang Chủ";
+}
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+                <h2 class="text-primary">TRƯỜNG ĐẠI HỌC SƯ PHẠM THÀNH PHỐ HỒ CHÍ MINH</h2>
+                <h3 class="text-danger">PHÒNG CÔNG TÁC CHÍNH TRỊ VÀ HỌC SINH SINH VIÊN</h3>
+                <div style="height: 2px; width:100%; background-color: #1A1162;"></div>
+                <h5 class="mt-3 ">
+                    Để tạo điều kiện thuận lợi cho sinh viên trong việc cấp giấy xác nhận sinh viên, Phòng Công tác chính trị và Học sinh, sinh viên thông báo đến sinh viên về việc đăng ký cấp Giấy xác nhận sinh viên theo hình thức trực tuyến.
+                </h5>
+
+                <h5 class="text-danger">Lưu ý:</h5>
+                <ul class="list-unstyled text-start">
+                    <li>
+                        <h5 class="text-danger" style="font-size:1.15rem">
+                            1. Những trường hợp sinh viên đã tốt nghiệp, nghỉ học hoặc tạm ngưng
+                            học sẽ không được cấp giấy chứng nhận.
+                        </h5>
+                    </li>
+                    <li>
+                        <h5 class="text-danger" style="font-size:1.15rem">
+                            2. Để tránh sai sót về thông tin, sinh viên phải dùng tài khoản email sinh viên do Trường cấp để liên hệ.
+
+                        </h5>
+                    </li>
+                    <li>
+                        <h5 class="text-danger" style="font-size:1.15rem">
+                            3. Mọi thắc mắc (nếu có), sinh viên sử dụng tài khoản email SV Trường
+                            cấp gửi phản hồi về email: hopthusinhvien@hcmue.edu.vn để được hỗ trợ.
+                        </h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-6 col-lg-6 d-flex align-items-stretch justify-content-center card-home">
+            <!--CARD HERE-->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body text-center custom-btn">
+                    <h5 class="card-title">Đăng ký giấy chứng nhận sinh viên</h5>
+                    <p class="card-text text-info">Hoàn tất thủ tục xin vay vốn tại các ngân hàng chính sách ở địa phương</p>
+                    <a asp-controller="Chungnhan" asp-action="Register" class="text-decoration-none custom-btn btn-card-hover">
+                        <button type="button" class="btn btn-outline-primary">Đăng Kí Thủ Tục Vay Vốn</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6 d-flex align-items-stretch justify-content-center">
+            <!--CARD HERE-->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body text-center custom-btn">
+                    <h5 class="card-title">Đăng ký giấy chứng nhận sinh viên</h5>
+                    <p class="card-text text-info">Hoàn tất các thủ tục khác</p>
+                    <a asp-controller="Chungnhankhac" asp-action="OtherRegister" class="text-decoration-none custom-btn btn-card-hover">
+                        <button type="button" class="btn btn-outline-primary">Đăng Kí Thủ Tục Khác</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

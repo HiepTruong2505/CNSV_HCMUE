@@ -1,0 +1,359 @@
+﻿@model ThongTinKhac
+@{
+    Layout = "_LayoutAdmin";
+}
+
+@*<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header pb-0">
+                <div class="row">
+                    <nav aria-label="breadcrum">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Admin" asp-action="Index">Admin</a>
+                            </li>
+
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Admin" asp-action="ChungNhanKhacIndex">
+                                    Danh Sách Chứng Nhận Khác
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active font-weight-bolder" aria-current="page">
+                                Thông Tin Chi Tiết
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="col-12">
+                        <h5 class="text-danger text-center fw-bold"> Thông Tin Chi Tiết Đăng Kí Giấy Chứng Nhận Sinh Viên Hoàn Tất Thủ Tục Khác</h5>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="MSSV"> Mã số sinh viên<span class="text-danger">*</span></label>
+                            <input disabled asp-for="MSSV" class="form-control">
+
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="HOTEN">Họ tên<span class="text-danger">*</span></label>
+                            <input disabled asp-for="HOTEN" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="NGAYSINH">Ngày sinh (tháng/ngày/năm)<span class="text-danger">*</span></label>
+                            <input disabled asp-for="NGAYSINH" value="@Model.NGAYSINH.ToString("yyyy-MM-dd")" class="form-control">
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="GIOITINH">Giới tính<span class="text-danger">*</span></label>
+                            <input disabled asp-for="GIOITINH" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="CMND">Số CMND/CCCD<span class="text-danger">*</span></label>
+                            <input disabled asp-for="CMND" class="form-control">
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="NGANHHOC">Ngành học<span class="text-danger">*</span></label>
+                            <input disabled asp-for="NGANHHOC" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="KHOAHOC"> Khóa học<span class="text-danger">*</span></label>
+                            <input disabled asp-for="KHOAHOC" class="form-control">
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="LOP">Lớp<span class="text-danger">*</span></label>
+                            <input disabled asp-for="LOP" class="form-control">
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="HEDAOTAO">Hệ đào tạo<span class="text-danger">*</span></label>
+                            <input disabled asp-for="HEDAOTAO" class="form-control">
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="EMAILSV">Email sinh viên<span class="text-danger">*</span></label>
+                            <input disabled asp-for="EMAILSV" type="email" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3 col-lg-3">
+                            <label class="form-label text-primary mt-2" asp-for="KHOA">Khoa<span class="text-danger">*</span></label>
+                            <input disabled asp-for="KHOA" class="form-control">
+                        </div>
+
+                        <div class="col-sm-12 col-md-3 col-lg-3">
+                            <label class="form-label text-primary mt-2" asp-for="Phone">Số điện thoại<span class="text-danger">*</span></label>
+                            <input disabled asp-for="Phone" class="form-control">
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label class="form-label text-primary mt-2" asp-for="NGAYSINH">Ngày đăng kí (tháng/ngày/năm)<span class="text-danger">*</span></label>
+                            <input disabled asp-for="NGAYDANGKI" value="@Model.NGAYDANGKI.ToString("yyyy-MM-dd")" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <label class="form-label text-primary mt-2" asp-for="LYDO">Lý do yêu cầu cấp giấy chứng nhận<span class="text-danger">*</span></label>
+                            <input disabled asp-for="LYDO" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <label for="formFile" class="form-label mt-2">Nếu SV cần xác nhận để hưởng ưu đãi giáo dục (Mẫu số 02 ban hành theo Thông tư số 36/2015/TT-BLĐTBXH), thì vui lòng upload file PDF tại đây</label>
+                            @if(Model.FileMinhChung != null){
+                                <embed src="@Model.FileMinhChung" width="100%" height="800px" />
+                            }
+                            else{
+                                <input disabled value="Không" class="form-control">
+                            }
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6 ">
+                            <label asp-for="XACNHAN" class="form-label mt-4">Xác nhận thông tin đăng kí<span class="text-danger">*</span>: </label>
+                            <div class="mt-2">
+                                <div class="form-check">
+                                    <input disabled asp-for="XACNHAN" class="form-check-input" type="checkbox" value="true" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Đã đọc kĩ và cung cấp chính xác, đầy đủ thông tin theo mẫu
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 pb-5 mt-4">
+                            <a asp-controller="Admin" asp-action="ChungNhanKhacIndex">
+                                <button class="btn btn-outline-primary btn-sm mb-0"><i class="fa-solid fa-arrow-left"></i> Quay Lại</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header pb-0">
+                <div class="row">
+                    <nav aria-label="breadcrum">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Admin" asp-action="Index">Admin</a>
+                            </li>
+
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Admin" asp-action="ChungNhanKhacIndex">
+                                    Danh Sách Chứng Nhận Khác
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active font-weight-bolder" aria-current="page">
+                                Thông Tin Chi Tiết
+                            </li>
+                        </ol>
+                    </nav>
+                    <button id="btnGenerate" type="button" class="btn btn-outline-dark">EXPORT PDF</button>
+                    <div class="container form-pdf" id="form-pdf">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="text-center header-form">
+                                    <h6>
+                                        BỘ GIÁO DỤC VÀ ĐÀO TẠO
+                                    </h6>
+                                    <h6>
+                                        <strong>
+                                            TRƯỜNG ĐH SƯ PHẠM TP.HỒ CHÍ MINH
+                                        </strong>
+                                    </h6>
+                                    <div class="line-horizontal"></div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-center header-form">
+                                    <h6>
+                                        CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+                                    </h6>
+                                    <h6>
+                                        <strong>
+                                            Độc lập - Tự do - Hạnh phúc
+                                        </strong>
+                                    </h6>
+                                    <div class="line-horizontal"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <div class="title-form mt-4">
+                                    <h4>
+                                        <b>
+                                            GIẤY CHỨNG NHẬN
+                                        </b>
+                                    </h4>
+                                </div>
+                                <div class="title-form">
+                                    <h5>
+                                        <b>
+                                            HIỆU TRƯỞNG TRƯỜNG ĐH SƯ PHẠM TP. HỒ CHÍ MINH CHỨNG NHẬN
+                                        </b>
+                                    </h5>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-info mt-4">
+                            <div class="col-12">
+                                <div class="name-form text-start">
+                                    <p>
+                                        Anh (Chị): <b class="fullname-form"><i>@Model.HOTEN</i></b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-info">
+                            <div class="col-6">
+                                <div class="name-form text-start">
+                                    @{
+                                        var birthDay = @Model.NGAYSINH.ToString("dd/MM/yyyy");
+                                    }
+                                    <p>
+                                        Sinh ngày: <b class="birthday-form">@birthDay</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="name-form text-end">
+                                    <b class="birthday-form">Khóa @Model.KHOAHOC</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-info">
+                            <div class="col-4">
+                                <div class="name-form text-start">
+                                    <p>
+                                        Là sinh viên năm thứ: <b class="birthday-form">...</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="name-form text-start">
+                                    <p>
+                                        Ngành: <b class="birthday-form">@Model.NGANHHOC</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="name-form text-end">
+                                    <p>
+                                        Hệ: <b class="birthday-form"> @Model.HEDAOTAO</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-info">
+                            <div class="col-4">
+                                <div class="name-form text-start">
+                                    <p>
+                                        Khoa @Model.KHOA
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="name-form text-end">
+                                    <p>
+                                        Trường Đại học Sư Phạm TP. Hồ Chí Minh
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-info">
+                            <div class="col-12">
+                                <div class="name-form text-start">
+                                    <p>
+                                        Trường cấp giấy chứng nhận cho sinh viên để: @Model.LYDO
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-info mt-4">
+                            <div class="col-12">
+                                <div class="name-form text-end">
+                                    @{
+
+                                        String sDate = @Model.NGAYDANGKI.ToString();
+                                        DateTime datevalue = (Convert.ToDateTime(sDate.ToString()));
+
+                                        String date = datevalue.Day.ToString();
+                                        String Month = datevalue.Month.ToString();
+                                        String Year = datevalue.Year.ToString();
+                                    }
+                                    <i>
+                                        TP.Hồ Chí Minh ngày @date  tháng @Month  năm @Year
+                                    </i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-info">
+                            <div class="col-7">
+                            </div>
+                            <div class="col-5">
+                                <div class="text-end">
+                                    <div class="name-form text-center">
+                                        <h6>
+                                            <b>
+                                                TL. Hiệu Trưởng
+                                            </b>
+                                        </h6>
+                                        <h6>
+                                            <b>
+                                                P.TRƯỞNG PHÒNG CTCT  và HSSV
+                                            </b>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row footer-form">
+                            <div class="col-6">
+                                <div class="name-form text-start">
+                                    <b>
+                                        Số: &ensp; &ensp; &ensp; &ensp;  /CN-ĐHSP-CTCT&HSSV
+                                    </b>
+                                </div>
+                                <div class="name-form text-start">
+                                    <b>
+                                        @Model.MSSV
+                                    </b>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="name-form text-center">
+                                    <b>
+                                        <i>
+                                            Nguyễn Hữu Thiện
+                                        </i>
+                                    </b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

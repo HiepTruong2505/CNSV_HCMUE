@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hệ Thống Admin DKCN</title>
+
+    <link href="~/lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <!-- Core css -->
+    <link href="~/css/app.min.css" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet">
+
+</head>
+
+<body style="overflow-y: hidden">
+    <div class="app">
+        <div class="container-fluid p-h-0 p-v-20 bg full-height d-flex bg-image-login">
+            <partial name="_Notification" />
+            <div class="d-flex flex-column justify-content-between w-100">
+                <div class="container d-flex h-100 justify-content-center">
+
+                    <div class="row align-items-center w-100 d-flex flex-column justify-content-center">
+                        <div class="text-primary text-center">
+                            <h2>HỆ THỐNG QUẢN LÝ CHỨNG NHẬN SINH VIÊN - ADMIN</h2>
+                        </div>
+                        <div class="col-md-7 col-lg-5 m-h-auto">
+
+                            <div class="card shadow-lg">
+                                
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Core Vendors JS -->
+    <script src="~/js/vendors.min.js"></script>
+
+    <!-- page js -->
+    <!-- Core JS -->
+    <script src="~/js/app.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

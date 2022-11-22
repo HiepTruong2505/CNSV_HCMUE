@@ -1,0 +1,215 @@
+﻿@model KhacCreateViewModel
+
+@{
+    ViewBag.Tite = "Đăng Kí Thủ Tục Khác";
+}
+
+<form method="post" asp-controller="ChungnhanKhac" asp-action="OtherRegister" enctype="multipart/form-data">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="border p-3 mt-2 row">
+                <div class="col-12">
+                    <h2 class="text-danger text-center fw-bold">Đăng Kí Giấy Chứng Nhận Sinh Viên Hoàn Tất Thủ Tục Khác</h2>
+                    <p><strong>Dấu <span class="text-danger">*</span> Bắt buộc điền thông tin</strong></p>
+                </div>
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="MSSV">@Html.DisplayNameFor(m => m.MSSV)<span class="text-danger">*</span></label>
+                        <input asp-for="MSSV" class="form-control">
+                        <span asp-validation-for="MSSV" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="HOTEN">@Html.DisplayNameFor(m => m.HOTEN)<span class="text-danger">*</span></label>
+                        <input asp-for="HOTEN" class="form-control">
+                        <span asp-validation-for="HOTEN" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="NGAYSINH">@Html.DisplayNameFor(m => m.NGAYSINH)<span class="text-danger">*</span></label>
+                        <input asp-for="NGAYSINH" class="form-control">
+                        <span asp-validation-for="NGAYSINH" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="GIOITINH">@Html.DisplayNameFor(m => m.GIOITINH)<span class="text-danger">*</span></label>
+                        <select asp-for="GIOITINH" class="form-select">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                        <span asp-validation-for="GIOITINH" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="CMND">@Html.DisplayNameFor(m => m.CMND)<span class="text-danger">*</span></label>
+                        <input asp-for="CMND" class="form-control">
+                        <span asp-validation-for="CMND" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="KHOAHOC"> @Html.DisplayNameFor(m => m.KHOAHOC)<span class="text-danger">*</span></label>
+                        <input asp-for="KHOAHOC" class="form-control">
+                        <span asp-validation-for="KHOAHOC" class="text-danger"></span>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                      <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="KHOA">@Html.DisplayNameFor(m => m.KHOA)<span class="text-danger">*</span></label>
+                        <select asp-for="KHOA" class="form-select">
+                            @foreach (var item in Model.KhoaList)
+                            {
+                                <option value="@item">@item</option>
+                            }
+
+                        </select>
+                        <span asp-validation-for="KHOA" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="@Model.NGANHHOC">@Html.DisplayNameFor(m => m.NGANHHOC)<span class="text-danger">*</span></label>
+                        <select asp-for="NGANHHOC" class="form-select">
+                            @foreach (var item in Model.NganhList)
+                            {
+                                <option value="@item">@item</option>
+                            }
+                        </select>
+                        <span asp-validation-for="NganhList" class="text-danger"></span>
+                    </div>
+
+                   
+
+                </div>
+
+                <div class="row">
+                     <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="LOP">@Html.DisplayNameFor(m => m.LOP)<span class="text-danger">*</span></label>
+                        <input asp-for="LOP" class="form-control">
+                        <span asp-validation-for="LOP" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="EMAILSV">@Html.DisplayNameFor(m => m.EMAILSV)<span class="text-danger">*</span></label>
+                        <input asp-for="EMAILSV" type="email" class="form-control">
+                        <span asp-validation-for="EMAILSV" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="row">
+                     <div class="col-sm-12 col-md-3 col-lg-3">
+                        <label class="form-label text-primary mt-2" asp-for="HEDAOTAO">@Html.DisplayNameFor(m => m.HEDAOTAO)<span class="text-danger">*</span></label>
+                        <input asp-for="HEDAOTAO" class="form-control">
+                        <span asp-validation-for="HEDAOTAO" class="text-danger"></span>
+                    </div>
+                    
+          
+
+                    <div class="col-sm-12 col-md-3 col-lg-3">
+                        <label class="form-label text-primary mt-2" asp-for="Phone">@Html.DisplayNameFor(m => m.Phone)<span class="text-danger">*</span></label>
+                        <input asp-for="Phone" class="form-control">
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="form-label text-primary mt-2" asp-for="NGAYDANGKI">@Html.DisplayNameFor(m => m.NGAYDANGKI)<span class="text-danger">*</span></label>
+                        <input type="text" asp-for="NGAYDANGKI" value="@DateTime.Now.ToString("MM/dd/yyyy")" disabled class="form-control">
+                        <span asp-validation-for="NGAYDANGKI" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label class="form-label text-primary mt-2" asp-for="LYDO">@Html.DisplayNameFor(m => m.LYDO)<span class="text-danger">*</span></label>
+                        <fieldset class="form-group reason">
+                            @foreach (var item in Model.LyDoList)
+                            {
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="reason" value="@item" />@item                                 
+                                </div>
+                                @if (item.Equals("Bổ túc hồ sơ đi du học"))
+                                {
+                                    <input class="form-control form-control-sm" id="DuHoc" onfocusout="myFunction()" type="hidden" name="@item" placeholder="Tên quốc gia du học" />
+                                }
+                            }
+                            <input placeholder="Nhập lý do khác tại đây" id="GetValueLyDo" type="hidden" asp-for="LYDO" class="form-control form-control-sm" />
+                            <span asp-validation-for="LYDO" class="text-danger"></span>
+                        </fieldset>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label for="formFile" class="form-label mt-2">@Html.DisplayNameFor(m => m.FILEMINHCHUNG)</label>
+                        <input class="form-control" asp-for="FILEMINHCHUNG" type="file" value="Upload">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6 ">
+                        <label asp-for="XACNHAN" class="form-label mt-4">@Html.DisplayNameFor(m => m.XACNHAN)<span class="text-danger">*</span>: </label>
+                        <div class="mt-2">
+                            <div class="form-check">
+                                <input asp-for="XACNHAN" class="form-check-input" type="checkbox" value="true" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Đã đọc kĩ và cung cấp chính xác, đầy đủ thông tin theo mẫu
+                                </label>
+                            </div>
+                        </div>
+                        <span asp-validation-for="XACNHAN" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pb-5 mt-4">
+                        <button type="submit" class="btn btn-outline-primary">Đăng Kí</button>
+                        <a class="btn btn-outline-danger cancel-btn" asp-controller="Home" asp-action="Index">Hủy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+    <script type="text/javascript">
+
+
+        $('input[type=radio][name=reason]').change(function () {
+            if ($('input[type=radio][value="Mục khác"]').is(":checked")) {
+                document.getElementById("GetValueLyDo").type = "text";
+                document.getElementById("GetValueLyDo").value = "";
+            }
+            else 
+            {
+                var value = $("input[type=radio][name=reason]:checked").val();
+                document.getElementById("GetValueLyDo").type = "hidden";
+                document.getElementById("GetValueLyDo").value = value;
+            }
+        });
+
+        $('input[type=radio][name=reason]').change(function () {                      
+            if ($('input[type=radio][value="Bổ túc hồ sơ đi du học"]').is(":checked")) {
+                document.getElementById("DuHoc").type = "text";
+                document.getElementById("DuHoc").value = "";     
+            }
+            else 
+            {
+                var value = $("input[type=radio][name=reason]:checked").val();
+                document.getElementById("DuHoc").type = "hidden";
+                document.getElementById("DuHoc").value = value;
+    
+            }        
+        });
+
+        function myFunction() {
+            const temp = "Bổ túc hồ sơ đi du học ";
+            var x = document.getElementById("DuHoc");                   
+            document.getElementById("GetValueLyDo").value = temp + x.value;
+            
+        }
+
+
+    </script>
+}

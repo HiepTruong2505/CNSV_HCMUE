@@ -1,0 +1,125 @@
+﻿@model PaginatedList<ChungnhanIndexViewModel>
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+<div class="table-responsive p-0">
+    <table class="table align-items-center mb-0">
+        <thead>
+            <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder">
+                    <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["HoTenSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Họ Tên</a>
+                </th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">
+                    <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["MSSVSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">MSSV</a>
+                </th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">
+                    <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["NgaySinhSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Ngày Sinh</a>
+                </th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">
+                    <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["GioiTinhSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Giới Tính</a>
+                </th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">
+                    <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["NganhHocSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Ngành Học</a>
+                </th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">
+                    <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["KhoaHocSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Khóa Học</a>
+                </th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">
+                    <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["KhoaSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Khoa</a>
+                </th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">
+                    <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["LopSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Lớp</a>
+                </th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">
+                    <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["NgayDangKiSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Ngày Đăng Kí</a>
+                </th>
+                <th class="text-secondary"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="row-data">
+                    <td onclick="location.href = '@Url.Action((@ViewBag.View == "ChungNhanIndex" ? "DetailIndex" : "OtherDetailIndex"), "Admin", new { id = item.ID })'" class="align-middle text-center">
+                        <div class="d-flex px-2 py-1">
+                            <div class="d-flex flex-column justify-content-center">
+                                <h6 class="mb-0 text-sm">@item.HOTEN</h6>
+                            </div>
+                        </div>
+                    </td>
+                    <td onclick="location.href = '@Url.Action((@ViewBag.View == "ChungNhanIndex" ? "DetailIndex" : "OtherDetailIndex"), "Admin", new { id = item.ID })'" class="align-middle text-center">
+                        <p class="text-xs font-weight-bold mb-0">@item.MSSV</p>
+                    </td>
+                    <td onclick="location.href = '@Url.Action((@ViewBag.View == "ChungNhanIndex" ? "DetailIndex" : "OtherDetailIndex"), "Admin", new { id = item.ID })'" class="align-middle text-center" >
+                        <span class="text-secondary text-xs font-weight-bold">@item.NGAYSINH.ToShortDateString()</span>
+                    </td>
+                    <td onclick="location.href = '@Url.Action((@ViewBag.View == "ChungNhanIndex" ? "DetailIndex" : "OtherDetailIndex"), "Admin", new { id = item.ID })'" class="align-middle text-center" >
+                        @if (@item.GIOITINH == "Nam")
+                        {
+                            <span class="badge badge-sm bg-gradient-success">@item.GIOITINH</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-sm bg-gradient-secondary">@item.GIOITINH</span>
+                        }
+                    </td>
+                    <td onclick="location.href = '@Url.Action((@ViewBag.View == "ChungNhanIndex" ? "DetailIndex" : "OtherDetailIndex"), "Admin", new { id = item.ID })'" class="align-middle text-center">
+                        <p class="text-xs font-weight-bold mb-0">@item.NGANHHOC</p>
+                    </td>
+
+                    <td onclick="location.href = '@Url.Action((@ViewBag.View == "ChungNhanIndex" ? "DetailIndex" : "OtherDetailIndex"), "Admin", new { id = item.ID })'" class="align-middle text-center" >
+                        <p class="text-xs font-weight-bold mb-0">@item.KHOAHOC</p>
+                    </td>
+
+                    <td onclick="location.href = '@Url.Action((@ViewBag.View == "ChungNhanIndex" ? "DetailIndex" : "OtherDetailIndex"), "Admin", new { id = item.ID })'" class="align-middle text-center">
+                        <p class="text-xs font-weight-bold mb-0">@item.KHOA</p>
+                    </td>
+
+                    <td onclick="location.href = '@Url.Action((@ViewBag.View == "ChungNhanIndex" ? "DetailIndex" : "OtherDetailIndex"), "Admin", new { id = item.ID })'" class="align-middle text-center">
+                        <p class="text-xs font-weight-bold mb-0">@item.LOP</p>
+                    </td>
+
+                    <td onclick="location.href = '@Url.Action((@ViewBag.View == "ChungNhanIndex" ? "DetailIndex" : "OtherDetailIndex"), "Admin", new { id = item.ID })'" class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">@item.NGAYDANGKI.ToShortDateString()</span>
+                    </td>
+                    <td>
+
+                        <form asp-action="@(ViewBag.View == "ChungNhanIndex" ? "DeleteChungNhan" : "DeleteChungNhanKhac")" asp-route-id="@item.ID" onsubmit="return jQueryAjaxDelete(this)" class="d-inline">
+                            <button class="bg-transparent" style="border: none;" type="submit">
+                                <i class="fas fa-trash-alt text-danger"></i>&nbsp;
+                            </button>
+                        </form>
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h6 class="text-center text-warning mt-4">
+        @TempData["SearchResult"]
+    </h6>
+</div>
+<div class="pagination">
+    <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="@prevDisabled">
+        <i class="fa-sharp fa-solid fa-arrow-left"></i>
+    </a>
+
+    @for (var i = @Model.StartPage; i <= Model.EndPage; i++)
+    {
+        if (@Model.PageIndex == i)
+        {
+            <a class="selected" href="#">@i</a>
+        }
+        else
+        {
+            <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@i" asp-route-currentFilter="@ViewData["CurrentFilter"]">@i</a>
+        }
+    }
+
+    <a asp-action="@(ViewBag.View == "ChungNhanIndex" ? "ChungNhanIndex" : "ChungNhanKhacIndex")" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="@nextDisabled">
+        <i class="fa-sharp fa-solid fa-arrow-right"></i>
+    </a>
+</div>
+

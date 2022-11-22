@@ -1,0 +1,93 @@
+﻿@model IEnumerable<ChungnhanIndexViewModel>
+
+@{
+    ViewBag.Tite = "Danh Sách Chứng Nhận";
+    Layout = "_LayoutAdmin";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header pb-0">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <nav aria-label="breadcrum">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a asp-controller="Admin" asp-action="ChungNhanIndex">Admin</a>
+                                </li>
+
+                                <li class="breadcrumb-item active font-weight-bolder" aria-current="page">
+                                    Danh Sách Chứng Nhận
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <form asp-controller="Admin" asp-action="ChungNhanIndex">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-10 col-lg-10">
+                                    <input type="text"
+                                           class="form-control btn-design"
+                                           name="SearchString"
+                                           id="txtSearch"
+                                           value="@ViewData["CurrentFilter"]"
+                                           placeholder="Tìm theo MSSV, Tên, Khoa" />
+                                </div>
+                                <div class="col-sm-12 col-md-2 col-lg-2 search-btn">
+                                    <button type="submit" id="btnSearch" class="btn btn-warning btn-design mt-2">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 btn-group" role="group">
+                        <div class="dropdown">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-file-excel"></i>&nbsp; EXPORT EXCEL
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                <li>
+                                    <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#AllModal">
+                                        <i class="fa-solid fa-file-excel" style="color: #10b010"></i> &nbsp; Export Tất Cả
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#khoaModal">
+                                        <i class="fa-solid fa-file-excel" style="color: #10b010"></i> &nbsp; Export Khoa
+                                    </button>
+                                   
+                                </li>
+                                <li>
+                                    <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#nganhModal">
+                                        <i class="fa-solid fa-file-excel" style="color: #10b010"></i> &nbsp; Export Ngành
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#namModal">
+                                        <i class="fa-solid fa-file-excel" style="color: #10b010"></i>&nbsp; Export Năm
+                                    </button>
+                                
+                                </li>
+                            </ul>
+                            
+                        </div>
+                        <partial name="_ExportCNExcelPartial" />
+                        <partial name="_ExportCNExcelKhoaPartial" />
+                        <partial name="_ExportCNExcelNganhPartial" />
+                        <partial name="_ExportCNExcelNamPartial" />
+                    </div>
+
+            </div>
+            <div id="list-view" class="card-body px-0 pt-0 pb-2">
+                @await Html.PartialAsync("_ListViewPartial", Model)
+            </div>
+
+        </div>
+    </div>
+</div>

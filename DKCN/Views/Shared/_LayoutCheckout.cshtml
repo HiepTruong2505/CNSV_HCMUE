@@ -1,0 +1,46 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DKCN</title>
+    <link rel="icon" href="~/files/logo_hcmue.png" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/bootswatchTheme.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DKCN.styles.css" asp-append-version="true" />
+    <link href="~/lib/fontawesome/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body style="overflow-y: hidden">
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="container mt-5 d-flex justify-content-center">
+                <div class="iphone">
+                    <header class="header">
+                        <img src="~/files/logo_hcmue.png" alt="HCMUE" width="100px" />
+                        <h3>VUI LÒNG XÁC NHẬN THANH TOÁN</h3>
+                    </header>
+
+                    @RenderBody()
+                </div>
+
+
+            </div>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-center text-muted">
+        <div class="container">
+            <a asp-controller="Home"
+               asp-action="Privacy">&copy; 2022 - Đăng Kí Chứng Nhận HCMUE - &nbsp;Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+
+</html>
