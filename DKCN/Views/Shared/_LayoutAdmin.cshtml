@@ -209,6 +209,21 @@
     </script>
 
     <script src="~/js/site.js"></script>
+    <script src="~/lib/dist/html2pdf.bundle.min.js"></script>
+    <script type="text/javascript">
+        $("#btnGenerate").click(function () {
+            var element = document.getElementById('form-pdf');
+            var opt = {
+                margin: 1,
+                filename: 'GiayChungNhan.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'pt', format: 'letter', orientation: 'landscape' }
+            };
+
+            // New Promise-based usage:
+            html2pdf().set(opt).from(element).save();
+        })
+    </script>
    
     @await RenderSectionAsync("Scripts", required: false)
 </body>
